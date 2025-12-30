@@ -1,14 +1,14 @@
-FROM node:20-alpine as builder
+# Stage 1: Build React app
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci || npm install
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine
-RUN apk add --no-cache curl
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-RUN npm install -g serve
-EXPOSE 5173
-CMD ["serve", "-s", "dist", "-l", "5173"]
+# Stage 2: Nginx static server
+FROM nginx:alpine
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
