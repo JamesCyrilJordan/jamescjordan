@@ -4,14 +4,7 @@ services:
     container_name: jamescjordan_backend
     networks:
       - jamescjordan_net
-    environment:
-      - PORT=5000
-      - CLIENT_ORIGIN=https://jamescjordan.com,https://www.jamescjordan.com,http://jamescjordan.com,http://www.jamescjordan.com
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=${SMTP_PORT}
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASS=${SMTP_PASS}
-      - CONTACT_INBOX=${CONTACT_INBOX}
+    env_file: ./backend/.env
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:5000/api/health"]
       interval: 20s
