@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
-import { Github, Linkedin } from 'react-bootstrap-icons';
+import { Github, Linkedin, StackOverflow } from 'react-bootstrap-icons';
 
 function Footer() {
   return (
@@ -9,15 +9,17 @@ function Footer() {
         <Stack direction="horizontal" gap={3} className="justify-content-between flex-wrap">
           <div>
             <strong>James C. Jordan</strong>
-            <div>Building thoughtful products with modern JavaScript stacks.</div>
+            <div>Building thoughtful products with modern coding practices.</div>
           </div>
           <Stack direction="horizontal" gap={3}>
-            <a className="text-light" href="https://github.com/jamescjordan" aria-label="GitHub">
+            <a className="text-light" href="https://github.com/JamesCyrilJordan" aria-label="GitHub">
               <Github size={24} />
             </a>
             <a className="text-light" href="https://www.linkedin.com/in/jamescjordan/" aria-label="LinkedIn">
               <Linkedin size={24} />
             </a>
+            <a className="text-light" href="https://stackoverflow.com/users/2029737/jay-jordan" aria-label="Stack Overflow"></a>
+            <StackOverflow size={24} />
           </Stack>
         </Stack>
       </Container>
