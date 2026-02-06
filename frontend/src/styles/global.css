@@ -68,3 +68,13 @@ a {
 a:hover {
   color: #38bdf8;
 }
+
+.in-badge {
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.in-badge:hover {
+  color: #1e40af; /* Nexus blue */
+}

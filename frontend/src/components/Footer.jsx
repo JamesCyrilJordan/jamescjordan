@@ -11,6 +11,11 @@ function Footer() {
             <strong>James C. Jordan</strong>
             <div>Building thoughtful products with modern coding practices.</div>
           </div>
+          <small><a href="https://innovationnexus.com/portfolio"
+            class="in-badge"
+            title="Custom-built by Innovation Nexus">
+            Built by <strong>Innovation Nexus</strong>
+          </a></small>
           <SocialLinks
             iconOnly
             className="text-light"
