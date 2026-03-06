@@ -29,6 +29,12 @@ main {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
+.hero-profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+}
+
 .section-heading h2,
 .section-heading h1 {
   margin-bottom: 0.25rem;
